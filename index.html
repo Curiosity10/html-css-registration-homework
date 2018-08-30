@@ -10,14 +10,30 @@
 </head>
 
 <body>
-  <form action="https://reqres.in/api/register" method="post">
-    <input type="tel" name="phone" id="phone" placeholder="Mobile Phone" required>
-    <input type="email" name="email" id="email" placeholder="Email ID" required>
-    <input type="password" name="password" id="password" placeholder="Password" required>
-    <input type="checkbox" name="agree" id="agree" required>
-    <label for="agree"> I agree to terms and conditions</label>
-    <button>Register</button>
-  </form>
+  <div class="wrapper">
+    <section class="container">
+      <input class="tab" type="radio" id="signIn_tab" name="tabstab" checked="checked" />
+      <label class="title signIn_tab" for="signIn_tab">Sign in</label>
+      <form class="form signIn" autocomplete="on" action="https://reqres.in/api/login" method="post">
+        <input class="input signIn_email" type="email" name="email" id="email" placeholder="Email" required>
+        <input class="input signIn_password" type="password" name="password" id="password" placeholder="Password" required>
+        <input class="checkbox signIn_agree" type="checkbox" name="keepLog" id="keepLog" required>
+        <label class="label signIn_label" for="keepLog"><span class="checkmark"></span> Keep me logged in</label>
+        <input class="submit signIn_submit" type="submit" value="Login">
+        <a class="signIn_forgetPas" href="#">Forgot password?</a>
+      </form>
+      <input class="tab" type="radio" id="signUp_tab" name="tabstab" />
+      <label class="title signUp_tab" for="signUp_tab">Sign up</label>
+      <form class="form signUp" autocomplete="on" action="https://reqres.in/api/register" method="post">
+        <input class="input signUp_phone" type="tel" name="phone" id="phone" placeholder="Mobile Phone" required>
+        <input class="input signUp_email" type="email" name="email" id="email" placeholder="Email ID" required>
+        <input class="input signUp_password" type="password" name="password" id="password" placeholder="Password" required>
+        <input class="checkbox signUp_agree" type="checkbox" name="agree" id="agree" required>
+        <label class="label signUp_label" for="agree"><span class="checkmark"></span> I agree to terms and conditions</label>
+        <input class="submit signUp_submit" type="submit" value="Register">
+      </form>
+    </section>
+  </div>
 </body>
 
 </html>

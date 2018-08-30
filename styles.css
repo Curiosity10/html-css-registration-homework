@@ -1,0 +1,151 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 17px;
+}
+body {
+  background: url("./Layer.png") no-repeat;
+  font-family: ProximaNova, Arial, Helvetica, sans-serif;
+}
+@font-face {
+  font-family: ProximaNova;
+  src: url("fonts/ProximaNova-Regular.woff") format("woff2");
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 430px;
+  margin-top: 90px;
+  padding: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+input[type="radio"] {
+  display: none;
+}
+.title {
+  margin-right: 40px;
+  margin-bottom: 80px;
+  order: -1;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-align: center;
+}
+.form {
+  position: relative;
+  display: none;
+  width: 100%;
+  flex-grow: 2;
+  margin: 0;
+}
+.tab:checked + .title:after {
+  content: "";
+  display: block;
+  margin: 10px auto;
+  width: 90px;
+  border-bottom: 3px solid #ffab1a;
+}
+.tab:checked + .title + .form {
+  display: flex;
+  flex-direction: column;
+}
+.input {
+  background-color: rgba(0, 0, 0, 0);
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #c0c0c0;
+  opacity: 0.9;
+  padding: 5px;
+  margin-bottom: 65px;
+  color: #fff;
+  font-size: 1rem;
+}
+.input::placeholder {
+  color: #fff;
+  font-size: 1rem;
+}
+.checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.signIn_label .checkmark {
+  position: absolute;
+  top: 52%;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #215aa7;
+  border-radius: 3px;
+}
+input:checked ~ .label .checkmark:after {
+  display: block;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 5px;
+  top: 1px;
+  width: 4px;
+  height: 7px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.signIn_label {
+  cursor: pointer;
+  margin-left: 20px;
+  color: #fff;
+  font-size: 15px;
+  margin-bottom: 70px;
+}
+.signUp_label {
+  cursor: pointer;
+  margin-left: 20px;
+  color: #fff;
+  font-size: 15px;
+  margin-bottom: 40px;
+}
+.signUp_label .checkmark {
+  position: absolute;
+  top: 70%;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #215aa7;
+  border-radius: 3px;
+}
+
+.submit {
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 200px;
+  margin: 0 auto;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 20px;
+  background-color: #f57f17;
+  border-radius: 20px;
+  padding: 8px;
+  border: none;
+  margin-bottom: 30px;
+}
+.signIn_forgetPas {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0 auto;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    margin-top: 0px;
+  }
+}
