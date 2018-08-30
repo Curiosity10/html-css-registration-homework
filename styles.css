@@ -147,5 +147,6 @@ input:checked ~ .label .checkmark:after {
 @media screen and (max-width: 500px) {
   .container {
     margin-top: 0px;
+    height: 100vh;
   }
 }
