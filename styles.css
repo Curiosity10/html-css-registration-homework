@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 17px;
+  overflow: hidden;
 }
 body {
   background: url("./Layer.png") no-repeat;
@@ -142,11 +143,19 @@ input:checked ~ .label .checkmark:after {
   font-weight: 400;
   margin: 0 auto;
   text-decoration: none;
+  text-align: center;
 }
 
 @media screen and (max-width: 500px) {
   .container {
     margin-top: 0px;
-    height: 100vh;
+    height: 100%;
+    padding-left: 30px;
+  }
+  .signIn_label .checkmark {
+    top: 45%;
+  }
+  .signUp_label .checkmark {
+    top: 63%;
   }
 }
