@@ -7,7 +7,7 @@ body {
   font-size: 17px;
 }
 body {
-  background: url("./Layer.png") no-repeat center center fixed;
+  background: url("./Layer-min.png") no-repeat center center fixed;
   background-size: cover;
   font-family: ProximaNova, Arial, Helvetica, sans-serif;
 }
@@ -163,8 +163,7 @@ input:checked ~ .label .checkmark:after {
 
 @media screen and (max-width: 500px) {
   .container {
-    margin-top: 0px;
-    min-height: 600px;
+    margin: 0;
     height: 100%;
     width: 100%;
     padding-left: 30px;
