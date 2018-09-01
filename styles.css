@@ -1,17 +1,24 @@
 html,
 body {
+  width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
   font-size: 17px;
 }
 body {
-  background: url("./Layer.png") no-repeat;
+  background: url("./Layer.png") no-repeat center center fixed;
+  background-size: cover;
   font-family: ProximaNova, Arial, Helvetica, sans-serif;
 }
 @font-face {
   font-family: ProximaNova;
-  src: url("fonts/ProximaNova-Regular.woff") format("woff2");
+  src: url("fonts/ProximaNova-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: ProximaNova;
+  src: url("fonts/ProximaNova-Light.woff") format("woff");
+  font-weight: 300;
 }
 .container {
   display: flex;
@@ -21,7 +28,8 @@ body {
   max-width: 430px;
   margin-top: 90px;
   padding: 40px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: -5px 55px 71px rgba(0, 0, 0, 0.6);
 }
 input[type="radio"] {
   display: none;
@@ -38,30 +46,34 @@ input[type="radio"] {
 }
 
 .form {
-  position: relative;
-  display: none;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
   width: 100%;
   flex-grow: 2;
   margin: 0;
 }
-.tab:checked + .title:after {
-  content: "";
-  display: block;
-  margin: 10px auto;
-  width: 90px;
-  border-bottom: 3px solid #ffab1a;
-}
 .tab:checked + .title + .form {
+  position: relative;
   display: flex;
+  opacity: 1;
+  visibility: visible;
   flex-direction: column;
+  transition: 0.5s ease-in all;
 }
+
+.tab:checked + .title {
+  padding-bottom: 5px;
+  border-bottom: 3px solid #ffab1a;
+  transition: 0.5s ease all;
+}
+
 .input {
   background-color: rgba(0, 0, 0, 0);
   outline: none;
   border: none;
   border-bottom: 2px solid #c0c0c0;
-  opacity: 0.9;
-  padding: 5px;
+  padding: 3px;
   margin-bottom: 65px;
   color: #fff;
   font-size: 1rem;
@@ -82,7 +94,7 @@ input[type="radio"] {
   height: 15px;
   width: 15px;
   background-color: #215aa7;
-  border-radius: 3px;
+  border-radius: 1px;
 }
 input:checked ~ .label .checkmark:after {
   display: block;
@@ -106,6 +118,7 @@ input:checked ~ .label .checkmark:after {
   color: #fff;
   font-size: 15px;
   margin-bottom: 70px;
+  font-weight: 300;
 }
 .signUp_label {
   position: relative;
@@ -114,6 +127,7 @@ input:checked ~ .label .checkmark:after {
   color: #fff;
   font-size: 15px;
   margin-bottom: 40px;
+  font-weight: 300;
 }
 .signUp_label .checkmark {
   position: absolute;
@@ -122,7 +136,7 @@ input:checked ~ .label .checkmark:after {
   height: 15px;
   width: 15px;
   background-color: #215aa7;
-  border-radius: 3px;
+  border-radius: 1px;
 }
 
 .submit {
@@ -142,7 +156,6 @@ input:checked ~ .label .checkmark:after {
 .signIn_forgetPas {
   color: #fff;
   font-size: 20px;
-  font-weight: 400;
   margin: 0 auto;
   text-decoration: none;
   text-align: center;
@@ -158,5 +171,8 @@ input:checked ~ .label .checkmark:after {
   .title {
     margin-bottom: 40px;
     margin-right: 20px;
+  }
+  .input {
+    margin-bottom: 40px;
   }
 }
