@@ -7,31 +7,31 @@ body {
   font-size: 17px;
 }
 body {
-  background: url("./Layer-min.png") no-repeat center center fixed;
+  background: url('./Layer-min.png') no-repeat center center fixed;
   background-size: cover;
+  overflow-x: hidden;
   font-family: ProximaNova, Arial, Helvetica, sans-serif;
 }
 @font-face {
   font-family: ProximaNova;
-  src: url("fonts/ProximaNova-Regular.woff") format("woff");
+  src: url('fonts/ProximaNova-Regular.woff') format('woff');
 }
 @font-face {
   font-family: ProximaNova;
-  src: url("fonts/ProximaNova-Light.woff") format("woff");
+  src: url('fonts/ProximaNova-Light.woff') format('woff');
   font-weight: 300;
 }
 .container {
   display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;
-  margin: 0 auto;
+  margin: 6% auto;
   max-width: 430px;
-  margin-top: 90px;
   padding: 40px;
   background-color: rgba(0, 0, 0, 0.7);
   box-shadow: -5px 55px 71px rgba(0, 0, 0, 0.6);
 }
-input[type="radio"] {
+input[type='radio'] {
   display: none;
 }
 .title {
@@ -100,7 +100,7 @@ input:checked ~ .label .checkmark:after {
   display: block;
 }
 .checkmark:after {
-  content: "";
+  content: '';
   position: absolute;
   display: none;
   left: 5px;
@@ -162,15 +162,22 @@ input:checked ~ .label .checkmark:after {
 }
 
 @media screen and (max-width: 500px) {
+  body,
+  html {
+    width: 100%;
+    height: 100%;
+  }
   .container {
     margin: 0;
     height: 100%;
     width: 100%;
-    padding-left: 30px;
+    max-height: 550px;
+    padding: 30px 40px 0px 40px;
+    box-sizing: content-box;
   }
   .title {
-    margin-bottom: 20px;
     margin-right: 20px;
+    margin-bottom: 20px;
     height: 30px;
   }
   .input {
