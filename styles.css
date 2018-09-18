@@ -46,9 +46,8 @@ input[type='radio'] {
 }
 
 .form {
+  display: none;
   position: absolute;
-  visibility: hidden;
-  opacity: 0;
   width: 100%;
   flex-grow: 2;
   margin: 0;
@@ -56,16 +55,13 @@ input[type='radio'] {
 .tab:checked + .title + .form {
   position: relative;
   display: flex;
-  opacity: 1;
-  visibility: visible;
   flex-direction: column;
-  transition: 0.5s ease-in all;
 }
 
 .tab:checked + .title {
+  display: block;
   padding-bottom: 3px;
   border-bottom: 3px solid #ffab1a;
-  transition: 0.5s ease all;
 }
 
 .input {
@@ -170,13 +166,16 @@ input:checked ~ .label .checkmark:after {
     height: 100vh;
     width: 100%;
     padding: 45px 40px 0px 45px;
+    align-content: start;
   }
   .title {
-    margin-bottom: 30px;
     height: 30px;
   }
   .input {
     margin-bottom: 60px;
+  }
+  .form {
+    justify-content: baseline;
   }
   .signIn_password,
   .signUp_password {
